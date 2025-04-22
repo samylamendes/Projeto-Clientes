@@ -1,0 +1,9 @@
+package dominio;
+import apresentacao.TelaCadastro;
+
+public class Main{
+public static void main(String[] args) {
+    // Cria e exibe a tela de cadastro
+    new TelaCadastro();
+}
+}

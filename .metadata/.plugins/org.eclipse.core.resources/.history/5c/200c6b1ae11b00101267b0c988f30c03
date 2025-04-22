@@ -1,0 +1,70 @@
+package apresentacao;
+
+import javax.swing.*;
+
+public class TelaCadastro extends JFrame {  // Agora a classe herda de JFrame
+    private JLabel labelNome;
+    private JLabel labelCpf;
+    private JLabel labelSexo;
+    
+   
+    public JLabel getLabelNome() {
+		return labelNome;
+	}
+
+	public void setLabelNome(JLabel labelNome) {
+		this.labelNome = labelNome;
+	}
+
+	public JLabel getLabelCpf() {
+		return labelCpf;
+	}
+
+	public void setLabelCpf(JLabel labelCpf) {
+		this.labelCpf = labelCpf;
+	}
+
+	public JLabel getLabelSexo() {
+		return labelSexo;
+	}
+
+	public void setLabelSexo(JLabel labelSexo) {
+		this.labelSexo = labelSexo;
+	}
+
+	public TelaCadastro() {
+        construcaoTela();
+    }
+
+    private void construcaoTela() {
+        setSize(600, 500);      // Define o tamanho da janela
+        setTitle("Cadastro De Clientes"); // Título da janela
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Fechar a aplicação ao fechar a janela
+        setLayout(null); // Define layout absoluto (sem layout manager)
+
+      
+        this.adicionarCampos();
+        this.adicionarBotoes();
+        this.adicionarCompFoto();
+
+        setVisible(true);  // Torna a janela visível (agora a classe TelaCadastro herda JFrame)
+    }
+    
+    private void adicionarCampos(JFrame tela) {
+    	labelNome = new JLabel("Nome:");
+    	labelNome.setBounds(20,20,200,20);
+    	getContentPane().add(labelNome);
+    	
+    	labelCpf = new JLabel("CPF:");
+    	labelCpf.setBounds(20,20,200,20);
+    	getContentPane().add(labelCpf);
+    	
+    	labelSexo = new JLabel("Sexo:");
+    	labelSexo.setBounds(20,20,200,20);
+    	getContentPane().add(labelSexo);
+    	
+    }
+    private void adicionarBotoes(JFrame tela) {}
+    private void adicionarCompFoto(JFrame tela) {}
+    
+}

@@ -1,0 +1,24 @@
+package organizacaoDados;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.File;
+
+public class CriandoArquivo {
+  public static void main(String[] args) {
+	  try {
+		  File arquivo = new File("\"C:\\Users\\mende\\OneDrive\\Documentos\\Testando java\"");
+		  
+		  FileWriter fileWriter = new FileWriter(arquivo);
+		  BufferedWriter writer = new BufferedWriter(fileWriter);
+		  
+		  writer.write("hello world em java!");
+		  writer.flush();
+		  writer.close();
+		  
+	  } catch(Exception e) {
+		  System.out.print("Ocorreu um erro!");
+	  }
+	 
+	  
+  }
+}

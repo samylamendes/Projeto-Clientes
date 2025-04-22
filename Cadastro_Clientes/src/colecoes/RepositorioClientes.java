@@ -1,0 +1,24 @@
+package colecoes;
+import dominio.Cliente;
+
+public class RepositorioClientes {
+ // estruturação dos dados
+	private Cliente[] arrayClientes;
+	private int posicaoCliente; // define em qual posição no array de dadoso cliente x está
+	
+	public RepositorioClientes() {
+		this.arrayClientes = new Cliente[1000];
+		posicaoCliente = 0;
+	}
+	
+	public void adicionar(Cliente cliente) {
+		this.arrayClientes[posicaoCliente] = cliente;
+		posicaoCliente++;
+	}
+	
+	public void imprimirClientes() {
+	  for(Cliente cliente : this.arrayClientes) { 
+		 System.out.print(cliente);
+	}
+		}
+}

@@ -1,0 +1,33 @@
+package apresentacao;
+
+import javax.swing.*;
+
+public class TelaCadastro extends JFrame {  // Agora a classe herda de JFrame
+    private JLabel labelNome;
+    private JLabel labelCpf;
+    private JLabel labelSexo;
+
+    private JTextField campoNome;
+    private JTextField campoCpf;
+    private JTextField campoSexo;
+
+    // Construtor
+    public TelaCadastro() {
+        // Constrói a interface
+        construcaoTela();
+    }
+
+    private void construcaoTela() {
+        // Configurações da janela
+        setSize(600, 500);      // Define o tamanho da janela
+        setTitle("Cadastro De Clientes"); // Título da janela
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Fechar a aplicação ao fechar a janela
+        setLayout(null); // Define layout absoluto (sem layout manager)
+
+        // Chama os métodos para adicionar componentes
+        this.adicionarCampos();
+        this.adicionarBotoes();
+        this.adicionarCompFoto();
+
+        setVisible(true);  // Torna a janela visível (agora a classe TelaCadastro herda JFrame)
+    }

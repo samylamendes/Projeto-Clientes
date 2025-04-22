@@ -1,0 +1,11 @@
+package organizacaoDados;
+import organizacaoDados.LogicaCadastro;
+import dominio.Cliente;
+
+public class ValidadorCpf {
+   public static void validarCpf(Cliente cliente) {
+	   if(cliente.getCpf().length() != 11) {
+		   throw new CpfInvalidoException("Cpf invalido! Tente novamente!");
+	   }
+   }
+}

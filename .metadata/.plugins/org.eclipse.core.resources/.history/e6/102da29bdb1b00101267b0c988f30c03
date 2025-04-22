@@ -1,0 +1,67 @@
+package apresentacao;
+import javax.swing.*;
+
+public class TelaCadastro {
+	 private JLabel labelNome;
+	 private JLabel labelCpf;
+	 private JLabel labelSexo;
+	
+ public JLabel getLabelNome() {
+		return labelNome;
+	}
+
+
+	public void setLabelNome(JLabel labelNome) {
+		this.labelNome = labelNome;
+	}
+
+
+	public JLabel getLabelCpf() {
+		return labelCpf;
+	}
+
+
+	public void setLabelCpf(JLabel labelCpf) {
+		this.labelCpf = labelCpf;
+	}
+
+
+	public JLabel getLabelSexo() {
+		return labelSexo;
+	}
+
+
+	public void setLabelSexo(JLabel labelSexo) {
+		this.labelSexo = labelSexo;
+	}
+	
+	    // Construtor
+	    public TelaCadastro() {
+	        construcaoTela();
+	    }
+
+	 
+	    private void construcaoTela() {
+	    JFrame tela = new JFrame();
+	        tela.setSize(600, 500); // Tamanho da janela
+	        tela.setTitle("Cadastro De Clientes"); // Título
+	        tela.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
+	        tela.setLayout(null);
+	        tela.setVisible(true);
+	        
+	    }
+	    
+	   // definição visual da tela
+	   private void adicionarCampos(){
+		   labelNome = new JLabel("Nome:");
+		   labelNome.setBounds(20,20,200,20); // posicionamento do aviso na tela sendo x,y,largura,altura
+		   
+	   }
+	   
+	   private void adicionarBotoes() {}
+	   
+	   private void adicionarCompFoto() {}
+	   
+	   
+	   }
+

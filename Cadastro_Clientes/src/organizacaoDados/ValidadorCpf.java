@@ -1,0 +1,20 @@
+package organizacaoDados;
+import dominio.Cliente;
+import organizacaoDados.CpfInvalidoException;
+import organizacaoDados.DadosObrigatoriosException;
+
+public class ValidadorCpf {
+   public static void validarCpf(Cliente cliente) throws CpfInvalidoException {
+	   if(cliente.getCpf().length() != 11) {
+		   throw new CpfInvalidoException("Cpf invalido! Tente novamente!");  // dá erro na compilação 
+	   }	   
+   		validarDadosObrigatorios(cliente);
+   }
+	   
+	   private static void validarDadosObrigatorios(Cliente cliente) {
+		   if(cliente.getNome() == null || cliente.getNome().isEmpty()) {
+			   throw new DadosObrigatoriosException("Campo nome é obrigatorio!"); // apenas indica o erro, não atrapalha a compilação
+		   }
+	   }
+   }
+

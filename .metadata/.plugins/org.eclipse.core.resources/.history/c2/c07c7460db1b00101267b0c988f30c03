@@ -1,0 +1,10 @@
+package dominio;
+public class Main {
+    public static void main(String[] args) {
+        // Cria a instância da tela de cadastro
+        TelaCadastro telaCadastro = new TelaCadastro();
+        
+        // Faz a janela ficar visível
+        telaCadastro.setVisible(true);  // Garantir que a tela seja exibida
+    }
+}

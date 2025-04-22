@@ -1,0 +1,54 @@
+import java.util.UUID;
+package clientesJava;
+
+
+public class Cliente {
+	private UUID codigo;
+	private String nome;
+	private String cpf;
+	private String sexo;
+	private byte[] foto;
+
+	String setNome(string nome){
+		this.nome = nome;
+		return nome;
+	}
+
+	public void getNome(){
+		return nome;
+	}
+
+	public UUID getCodigo(){
+		return codigo;
+	}
+
+	public void setCodigo(UUID codigo){
+		this.codigo = codigo;
+	}
+
+	public String cpf(String cpf){
+		this.cpf = cpf;
+		return cpf;
+	}
+
+	public void getCpf(){
+		return cpf;
+	}
+	public String setSexo(String sexo){
+		this.sexo = sexo;
+		return sexo;
+	}
+
+	public void getSexo(){
+		return sexo;
+	}
+
+	private byte[] setFoto(byte[] foto){
+		this.foto = foto;
+	}
+
+	public Cliente(){
+		this.codigo = UUID.randomUUID();
+	}
+
+}

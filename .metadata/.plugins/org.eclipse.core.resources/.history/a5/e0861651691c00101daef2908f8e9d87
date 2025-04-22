@@ -1,0 +1,32 @@
+package logica;
+import java.util.UUID;
+import javax.swing.*;
+import dominio.Cliente;
+
+public class OrganizacaoCadastroInic implements OrgCadastro<Cliente> {
+
+	@Override
+	public void salvar(Cliente cliente) {
+		JOptionPane.showInternalMessageDialog(null,cliente);
+		
+	}
+
+	@Override
+	public Cliente buscar(UUID codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deletar(UUID codigo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void atualizar(Cliente objetoAtualizar) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

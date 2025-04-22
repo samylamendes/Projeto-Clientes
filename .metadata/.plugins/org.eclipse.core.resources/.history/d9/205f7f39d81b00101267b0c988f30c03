@@ -1,0 +1,22 @@
+package apresentacao;
+import javax.swing.*;
+
+public class TelaCadastro {
+	 private JLabel labelNome;
+	 private JLabel labelCpf;
+	 private JLabel labelSexo;
+
+	    // Construtor
+	    public TelaCadastro() {
+	        construcaoTela();
+	    }
+
+	 
+	    private void construcaoTela() {
+	    JFrame tela = new JFrame();
+	        tela.setSize(600, 500); // Tamanho da janela
+	        tela.setTitle("Cadastro De Clientes"); // Título
+	        tela.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
+	        tela.setLayout(null);
+	    }
+}

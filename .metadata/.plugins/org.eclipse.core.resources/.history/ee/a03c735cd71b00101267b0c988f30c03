@@ -1,0 +1,48 @@
+package apresentacao;
+
+import javax.swing.*;
+
+public class TelaCadastro extends JFrame {
+    // Declaração dos componentes
+    private JLabel labelNome;
+    private JLabel labelCpf;
+    private JLabel labelSexo;
+
+    // Construtor
+    public TelaCadastro() {
+        // Chama o método para configurar a interface
+        construcaoTela();
+    }
+
+    // Métodos getters e setters
+    public JLabel getLabelNome() {
+        return labelNome;
+    }
+
+    public void setLabelNome(JLabel labelNome) {
+        this.labelNome = labelNome;
+    }
+
+    public JLabel getLabelCpf() {
+        return labelCpf;
+    }
+
+    public void setLabelCpf(JLabel labelCpf) {
+        this.labelCpf = labelCpf;
+    }
+
+    public JLabel getLabelSexo() {
+        return labelSexo;
+    }
+
+    public void setLabelSexo(JLabel labelSexo) {
+        this.labelSexo = labelSexo;
+    }
+
+    // Método para construir a interface
+    private void construcaoTela() {
+        // Configurações da janela principal (TelaCadastro já é um JFrame)
+        setSize(600, 500); // Tamanho da janela
+        setTitle("Cadastro De Clientes"); // Título da janela
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Ação ao fechar a janela
+        setLayout(null); // Layout absoluto, sem o uso de layout managers

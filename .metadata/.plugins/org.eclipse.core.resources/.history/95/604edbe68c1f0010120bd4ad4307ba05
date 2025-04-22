@@ -1,0 +1,156 @@
+package apresentacao;
+import Enums.TipoSexo;
+import dominio.Cliente;
+import organizacaoDados.Cadastro;
+import organizacaoDados.CpfInvalidoException;
+import organizacaoDados.LogicaCadastro;
+
+
+import javax.swing.*;
+
+public class TelaCadastro extends JFrame {  
+    private JLabel labelNome;
+    private JLabel labelCpf;
+    private JLabel labelSexo;
+    
+    private JTextField campoNome;
+    private JTextField campoCpf;
+    private JComboBox<TipoSexo> campoSexo;
+    
+    private JButton botaoSalvar;
+
+    
+
+    public JTextField getCampoNome() {
+        return campoNome;
+    }
+
+    public void setCampoNome(JTextField campoNome) {
+        this.campoNome = campoNome;
+    }
+
+    public JTextField getCampoCpf() {
+        return campoCpf;
+    }
+
+    public void setCampoCpf(JTextField campoCpf) {
+        this.campoCpf = campoCpf;
+    }
+
+    public JComboBox<TipoSexo> getCampoSexo() {
+        return campoSexo;
+    }
+
+    public void setCampoSexo(JComboBox<TipoSexo> campoSexo) {
+        this.campoSexo = campoSexo;
+    }
+
+    public JLabel getLabelNome() {
+        return labelNome;
+    }
+
+    public void setLabelNome(JLabel labelNome) {
+        this.labelNome = labelNome;
+    }
+
+    public JLabel getLabelCpf() {
+        return labelCpf;
+    }
+
+    public void setLabelCpf(JLabel labelCpf) {
+        this.labelCpf = labelCpf;
+    }
+
+    public JLabel getLabelSexo() {
+        return labelSexo;
+    }
+
+    public void setLabelSexo(JLabel labelSexo) {
+        this.labelSexo = labelSexo;
+    }
+
+    public TelaCadastro() {
+        construcaoTela();
+    }
+
+    private void construcaoTela() {
+        setSize(600, 500);  
+        setTitle("Cadastro De Clientes");  
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);  // Fechar a aplicação ao fechar a janela
+        setLayout(null);  // Define layout absoluto 
+        this.adicionarCampos();
+        this.adicionarBotoes();
+        this.adicionarCompFoto();
+
+        setVisible(true);  
+    }
+
+    private void adicionarCampos() {
+        // para nome
+        labelNome = new JLabel("Nome:");
+        labelNome.setBounds(20, 20, 200, 20);  
+        getContentPane().add(labelNome);
+
+        campoNome = new JTextField();
+        campoNome.setBounds(120, 20, 200, 20);  
+        getContentPane().add(campoNome);
+
+        // para cpf
+        labelCpf = new JLabel("CPF:");
+        labelCpf.setBounds(20, 60, 200, 20);  
+        getContentPane().add(labelCpf);
+     
+        campoCpf = new JTextField();
+        campoCpf.setBounds(120, 60, 200, 20); 
+        getContentPane().add(campoCpf);
+
+        // para sexo
+        labelSexo = new JLabel("Sexo:");
+        labelSexo.setBounds(20, 100, 200, 20);  
+        getContentPane().add(labelSexo);
+
+       TipoSexo[] tipoSexo = {TipoSexo.F, TipoSexo.M, TipoSexo.O};
+       campoSexo = new JComboBox<>(tipoSexo);
+       campoSexo.setBounds(120, 100, 200, 20); 
+        getContentPane().add(campoSexo);
+    }
+
+ 
+   	private void adicionarBotoes() {
+    	    JButton botaoCadastro = new JButton("Cadastrar");
+    	    botaoCadastro.setBounds(120, 140, 120, 30);
+
+    	    Cadastro<Cliente> logicaCadastro = new LogicaCadastro(); // Criado aqui para uso dentro do botão
+
+    	    botaoCadastro.addActionListener(e -> {
+    	        String nome = campoNome.getText();
+    	        String cpf = campoCpf.getText();
+    	        TipoSexo sexo = (TipoSexo) campoSexo.getSelectedItem();
+
+    	        Cliente cliente = new Cliente(nome,cpf,sexo); // Cria o cliente com os dados do formulário
+
+    	        try {
+					logicaCadastro.salvar(cliente);
+				} catch (CpfInvalidoException e1) {
+
+					JOptionPane.showMessageDialog(null, e1.getMessage());
+				}
+    	          catch(Exception ex) {
+    	        	  JOptionPane.showMessageDialog(null, ex.getMessage());
+    	          }
+
+    	        logicaCadastro.imprimirRegistros(); // Imprime no console
+
+    	        JOptionPane.showMessageDialog(this,
+    	                "Cadastro realizado!\nNome: " + nome + "\nCPF: " + cpf + "\nSexo: " + sexo);
+    	    });
+
+    	    getContentPane().add(botaoCadastro);
+    	
+
+    }
+
+    private void adicionarCompFoto() {
+        
+    }
+}

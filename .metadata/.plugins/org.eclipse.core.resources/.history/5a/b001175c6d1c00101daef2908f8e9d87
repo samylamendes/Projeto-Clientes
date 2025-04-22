@@ -1,0 +1,12 @@
+package colecoes;
+import dominio.Cliente;
+
+public class RepositorioClientes {
+ // estruturação dos dados
+	private Cliente[] arrayClientes;
+	
+	public RepositorioClientes() {
+		this.arrayClientes = new Cliente[1000];
+	}
+	
+}

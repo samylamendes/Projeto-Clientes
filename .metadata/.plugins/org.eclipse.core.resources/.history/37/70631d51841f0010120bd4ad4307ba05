@@ -1,0 +1,6 @@
+package organizacaoDados;
+
+public class DadosObrigatoriosException extends RunTimeException {
+	
+
+}
